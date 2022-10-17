@@ -1,0 +1,32 @@
+name: minificationCI
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  CI: 
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SECRET_SSH_KEY }}
+          name: id_rsa # optional
+          known_hosts: unnecessary
+          if_key_exists: ignore
+      - run: git config --global user.email ${{ github.actor }}@github.com
+      - run: git config --global user.name ${{ github.actor }}
+      - run: git clone git@github.com:Yandex-Practicum/tests-selfmade-project-3-public.git
+      - run: bash minification.sh
+      - run: cd tests-selfmade-project-3-public && git add . && git commit -m "${GITHUB_SHA}" && git push

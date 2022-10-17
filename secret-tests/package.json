@@ -1,0 +1,30 @@
+{
+  "name": "tests-selfmade-project-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint:eslint": "npx eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  },
+  "dependencies": {
+    "@hexlet/immutable-fs-trees": "^0.7.1",
+    "css-tree": "^2.1.0",
+    "directory-tree": "^3.3.0",
+    "dotenv": "^16.0.1",
+    "file-url": "^4.0.0",
+    "i18next": "^21.8.14",
+    "puppeteer": "^15.4.0",
+    "resemblejs": "^4.1.0",
+    "stylelint": "^14.9.1",
+    "undici": "^5.7.0"
+  }
+}
