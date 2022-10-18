@@ -94,7 +94,7 @@ const runTests = async (projectPath, lang) => {
     checkElementsBySelectors(page, metaTags, 'metaTagsMissing'),
     checkElementsBySelectors(page, favicons, 'faviconsMissing'),
     checkElementsBySelectors(page, mobileFavicons, 'mobileFaviconMissing'),
-    checkPropertiesByElement(page, 'body', { margin: '0px', width: '800px' }),
+    checkPropertiesByElement(page, 'body', { margin: '0px' }),
     checkVideoAttributes(page, ['muted', 'autoplay', 'poster', 'loop'], ['controls']),
     checkPseudoElements(path.join(projectPath, 'styles', 'style.css')),
     checkLayout(page),
