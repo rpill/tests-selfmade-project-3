@@ -223,7 +223,7 @@ const checkPropertiesByElement = async (page, selector, properties) => {
     .filter(([name, value]) => styles[name] !== value)
     .map(([name, value]) => `${name}: ${value}`);
 
-  if (incorrectProperties) {
+  if (incorrectProperties.length) {
     return [{
       id: 'elementProperties',
       values: {
